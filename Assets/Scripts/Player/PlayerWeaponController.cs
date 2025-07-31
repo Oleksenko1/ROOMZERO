@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerWeaponController : MonoBehaviour
+{
+    [SerializeField] private Weapon weapon;
+    void Awake()
+    {
+        weapon.InitializeWeapon();
+    }
+    public void HandleWeaponControl()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            weapon.Fire();
+            Debug.Log("Shot");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            weapon.Reload();
+        }
+    }
+}
