@@ -26,4 +26,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    public void RotatePlayer(float angle)
+    {
+        rb.MoveRotation(angle);
+    }
 }
