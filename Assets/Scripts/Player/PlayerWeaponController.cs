@@ -14,7 +14,6 @@ public class PlayerWeaponController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
-            Debug.Log("Shot");
         }
 
         if (Input.GetKeyDown(KeyCode.R))

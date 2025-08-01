@@ -15,9 +15,8 @@ public class PistolWeapon : Gun
     {
         if (!CanShoot()) return;
 
-        Debug.Log("Weapon shot");
         Bullet bullet = bulletPool.GetBullet(shotPoint.position, shotPoint.rotation);
-        bullet.Shoot(friendlyLayer, shotSpeed);
+        bullet.Shoot(friendlyLayer, targetLayer, shotSpeed);
         magazineBullets--;
 
         lastShotTime = Time.time;

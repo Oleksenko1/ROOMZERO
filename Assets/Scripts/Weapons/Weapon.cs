@@ -11,7 +11,7 @@ public abstract class Weapon : MonoBehaviour
     protected float lastShotTime = 0;
     [Space(10)]
     public LayerMask friendlyLayer;
-    public LayerMask enemyLayer;
+    public LayerMask targetLayer;
     public abstract void InitializeWeapon();
     public abstract void Fire();
     public abstract void Reload();
