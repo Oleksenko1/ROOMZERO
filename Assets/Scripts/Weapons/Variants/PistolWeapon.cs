@@ -15,6 +15,7 @@ public class PistolWeapon : Gun
     {
         if (!CanShoot()) return;
 
+        Vector3 rotation = shotPoint.eulerAngles;
         Bullet bullet = bulletPool.GetBullet(shotPoint.position, shotPoint.rotation);
         bullet.Shoot(friendlyLayer, targetLayer, shotSpeed);
         magazineBullets--;

@@ -22,7 +22,7 @@ public class BulletPool : MonoBehaviour
     {
         Bullet bullet = Instantiate(bulletPrefab, transform);
         bullet.gameObject.SetActive(false);
-        bullet.SetPool(this); // Чтобы пуля могла возвращать себя обратно
+        bullet.SetPool(this);
         bulletPool.Enqueue(bullet);
         return bullet;
     }

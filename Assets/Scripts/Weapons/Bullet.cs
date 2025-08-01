@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Collider2D collider2D;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private Collider collider;
     private BulletPool pool;
     private LayerMask targetLayer;
     public LayerMask TargetLayer => targetLayer;
@@ -17,12 +17,11 @@ public class Bullet : MonoBehaviour
     {
         this.targetLayer = targetLayer;
 
-        rb.velocity = transform.right * moveSpeed;
+        rb.velocity = transform.forward * moveSpeed;
 
-        // Ignore collisions with friendly layers
-        collider2D.excludeLayers = friendlyLayer;
+        collider.excludeLayers = friendlyLayer;
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter(Collider collision)
     {
         pool.ReturnBullet(this);
     }

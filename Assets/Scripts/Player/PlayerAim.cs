@@ -9,12 +9,14 @@ public class PlayerAim : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     public void HandleAim()
     {
-        Vector3 mouseWorldPos = playerCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPos.z = 0f;
+        Vector3 mouseScreenPos = Input.mousePosition;
+        mouseScreenPos.z = playerCamera.transform.position.y - transform.position.y;
+
+        Vector3 mouseWorldPos = playerCamera.ScreenToWorldPoint(mouseScreenPos);
+        mouseWorldPos.y = transform.position.y;
 
         Vector3 direction = mouseWorldPos - transform.position;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
         playerMovement.RotatePlayer(angle);
     }
