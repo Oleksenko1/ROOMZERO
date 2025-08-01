@@ -3347,14 +3347,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9664381}
     m_Modifications:
-    - target: {fileID: 3936357572472906149, guid: 0e07f6b924471fc4dbc8eac0acdf2cc3, type: 3}
-      propertyPath: shotSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3936357572472906149, guid: 0e07f6b924471fc4dbc8eac0acdf2cc3, type: 3}
-      propertyPath: atackDelay
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5895603479537582881, guid: 0e07f6b924471fc4dbc8eac0acdf2cc3, type: 3}
       propertyPath: m_Name
       value: Pistol
