@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    [SerializeField] private Weapon weapon;
+    [SerializeField] private Gun weapon;
     void Awake()
     {
         weapon.InitializeWeapon();
@@ -21,4 +21,5 @@ public class PlayerWeaponController : MonoBehaviour
             weapon.Reload();
         }
     }
+    public Gun GetWeapon() => weapon;
 }

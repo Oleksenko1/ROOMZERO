@@ -15,12 +15,14 @@ public class PistolWeapon : Gun
     {
         if (!CanShoot()) return;
 
-        Vector3 rotation = shotPoint.eulerAngles;
         Bullet bullet = bulletPool.GetBullet(shotPoint.position, shotPoint.rotation);
         bullet.Shoot(friendlyLayer, targetLayer, shotSpeed);
+
         magazineBullets--;
 
         lastShotTime = Time.time;
+
+        CallOnFire();
     }
     public override void Reload()
     {
